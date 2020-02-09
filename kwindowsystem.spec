@@ -5,11 +5,11 @@
 # Source0 file verified with key 0x58D0EE648A48B3BB (faure@kde.org)
 #
 Name     : kwindowsystem
-Version  : 5.66.0
-Release  : 27
-URL      : https://download.kde.org/stable/frameworks/5.66/kwindowsystem-5.66.0.tar.xz
-Source0  : https://download.kde.org/stable/frameworks/5.66/kwindowsystem-5.66.0.tar.xz
-Source1  : https://download.kde.org/stable/frameworks/5.66/kwindowsystem-5.66.0.tar.xz.sig
+Version  : 5.67.0
+Release  : 28
+URL      : https://download.kde.org/stable/frameworks/5.67/kwindowsystem-5.67.0.tar.xz
+Source0  : https://download.kde.org/stable/frameworks/5.67/kwindowsystem-5.67.0.tar.xz
+Source1  : https://download.kde.org/stable/frameworks/5.67/kwindowsystem-5.67.0.tar.xz.sig
 Summary  : Access to the windowing system
 Group    : Development/Tools
 License  : LGPL-2.1
@@ -71,15 +71,15 @@ license components for the kwindowsystem package.
 
 
 %prep
-%setup -q -n kwindowsystem-5.66.0
-cd %{_builddir}/kwindowsystem-5.66.0
+%setup -q -n kwindowsystem-5.67.0
+cd %{_builddir}/kwindowsystem-5.67.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1578938413
+export SOURCE_DATE_EPOCH=1581281540
 mkdir -p clr-build
 pushd clr-build
 # -Werror is for werrorists
@@ -96,10 +96,10 @@ make  %{?_smp_mflags}  VERBOSE=1
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1578938413
+export SOURCE_DATE_EPOCH=1581281540
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/kwindowsystem
-cp %{_builddir}/kwindowsystem-5.66.0/COPYING.LIB %{buildroot}/usr/share/package-licenses/kwindowsystem/9a1929f4700d2407c70b507b3b2aaf6226a9543c
+cp %{_builddir}/kwindowsystem-5.67.0/COPYING.LIB %{buildroot}/usr/share/package-licenses/kwindowsystem/9a1929f4700d2407c70b507b3b2aaf6226a9543c
 pushd clr-build
 %make_install
 popd
@@ -219,6 +219,8 @@ popd
 /usr/include/KF5/KWindowSystem/KUserTimestamp
 /usr/include/KF5/KWindowSystem/KWindowEffects
 /usr/include/KF5/KWindowSystem/KWindowInfo
+/usr/include/KF5/KWindowSystem/KWindowShadow
+/usr/include/KF5/KWindowSystem/KWindowShadowTile
 /usr/include/KF5/KWindowSystem/KWindowSystem
 /usr/include/KF5/KWindowSystem/KXMessages
 /usr/include/KF5/KWindowSystem/NETWM
@@ -233,6 +235,7 @@ popd
 /usr/include/KF5/KWindowSystem/kusertimestamp.h
 /usr/include/KF5/KWindowSystem/kwindoweffects.h
 /usr/include/KF5/KWindowSystem/kwindowinfo.h
+/usr/include/KF5/KWindowSystem/kwindowshadow.h
 /usr/include/KF5/KWindowSystem/kwindowsystem.h
 /usr/include/KF5/KWindowSystem/kwindowsystem_export.h
 /usr/include/KF5/KWindowSystem/kxmessages.h
@@ -240,6 +243,7 @@ popd
 /usr/include/KF5/KWindowSystem/netwm_def.h
 /usr/include/KF5/KWindowSystem/private/kwindoweffects_p.h
 /usr/include/KF5/KWindowSystem/private/kwindowinfo_p.h
+/usr/include/KF5/KWindowSystem/private/kwindowshadow_p.h
 /usr/include/KF5/KWindowSystem/private/kwindowsystem_p.h
 /usr/include/KF5/KWindowSystem/private/kwindowsystemplugininterface_p.h
 /usr/include/KF5/kwindowsystem_version.h
@@ -253,7 +257,7 @@ popd
 %files lib
 %defattr(-,root,root,-)
 /usr/lib64/libKF5WindowSystem.so.5
-/usr/lib64/libKF5WindowSystem.so.5.66.0
+/usr/lib64/libKF5WindowSystem.so.5.67.0
 /usr/lib64/qt5/plugins/kf5/org.kde.kwindowsystem.platforms/KF5WindowSystemWaylandPlugin.so
 /usr/lib64/qt5/plugins/kf5/org.kde.kwindowsystem.platforms/KF5WindowSystemX11Plugin.so
 
