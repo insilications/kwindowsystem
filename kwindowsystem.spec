@@ -5,11 +5,11 @@
 # Source0 file verified with key 0x58D0EE648A48B3BB (faure@kde.org)
 #
 Name     : kwindowsystem
-Version  : 5.70.0
-Release  : 31
-URL      : https://download.kde.org/stable/frameworks/5.70/kwindowsystem-5.70.0.tar.xz
-Source0  : https://download.kde.org/stable/frameworks/5.70/kwindowsystem-5.70.0.tar.xz
-Source1  : https://download.kde.org/stable/frameworks/5.70/kwindowsystem-5.70.0.tar.xz.sig
+Version  : 5.71.0
+Release  : 32
+URL      : https://download.kde.org/stable/frameworks/5.71/kwindowsystem-5.71.0.tar.xz
+Source0  : https://download.kde.org/stable/frameworks/5.71/kwindowsystem-5.71.0.tar.xz
+Source1  : https://download.kde.org/stable/frameworks/5.71/kwindowsystem-5.71.0.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : LGPL-2.1 LGPL-3.0
@@ -71,15 +71,15 @@ license components for the kwindowsystem package.
 
 
 %prep
-%setup -q -n kwindowsystem-5.70.0
-cd %{_builddir}/kwindowsystem-5.70.0
+%setup -q -n kwindowsystem-5.71.0
+cd %{_builddir}/kwindowsystem-5.71.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1589212352
+export SOURCE_DATE_EPOCH=1592240949
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -95,11 +95,11 @@ make  %{?_smp_mflags}  VERBOSE=1
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1589212352
+export SOURCE_DATE_EPOCH=1592240949
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/kwindowsystem
-cp %{_builddir}/kwindowsystem-5.70.0/COPYING.LIB %{buildroot}/usr/share/package-licenses/kwindowsystem/9a1929f4700d2407c70b507b3b2aaf6226a9543c
-cp %{_builddir}/kwindowsystem-5.70.0/LICENSES/LicenseRef-KDE-Accepted-LGPL.txt %{buildroot}/usr/share/package-licenses/kwindowsystem/e458941548e0864907e654fa2e192844ae90fc32
+cp %{_builddir}/kwindowsystem-5.71.0/COPYING.LIB %{buildroot}/usr/share/package-licenses/kwindowsystem/9a1929f4700d2407c70b507b3b2aaf6226a9543c
+cp %{_builddir}/kwindowsystem-5.71.0/LICENSES/LicenseRef-KDE-Accepted-LGPL.txt %{buildroot}/usr/share/package-licenses/kwindowsystem/e458941548e0864907e654fa2e192844ae90fc32
 pushd clr-build
 %make_install
 popd
@@ -112,6 +112,7 @@ popd
 /usr/share/locale/af/LC_MESSAGES/kwindowsystem5_qt.qm
 /usr/share/locale/ar/LC_MESSAGES/kwindowsystem5_qt.qm
 /usr/share/locale/as/LC_MESSAGES/kwindowsystem5_qt.qm
+/usr/share/locale/az/LC_MESSAGES/kwindowsystem5_qt.qm
 /usr/share/locale/be/LC_MESSAGES/kwindowsystem5_qt.qm
 /usr/share/locale/be@latin/LC_MESSAGES/kwindowsystem5_qt.qm
 /usr/share/locale/bg/LC_MESSAGES/kwindowsystem5_qt.qm
@@ -257,7 +258,7 @@ popd
 %files lib
 %defattr(-,root,root,-)
 /usr/lib64/libKF5WindowSystem.so.5
-/usr/lib64/libKF5WindowSystem.so.5.70.0
+/usr/lib64/libKF5WindowSystem.so.5.71.0
 /usr/lib64/qt5/plugins/kf5/org.kde.kwindowsystem.platforms/KF5WindowSystemWaylandPlugin.so
 /usr/lib64/qt5/plugins/kf5/org.kde.kwindowsystem.platforms/KF5WindowSystemX11Plugin.so
 
