@@ -5,11 +5,11 @@
 # Source0 file verified with key 0x58D0EE648A48B3BB (faure@kde.org)
 #
 Name     : kwindowsystem
-Version  : 5.82.0
-Release  : 42
-URL      : https://download.kde.org/stable/frameworks/5.82/kwindowsystem-5.82.0.tar.xz
-Source0  : https://download.kde.org/stable/frameworks/5.82/kwindowsystem-5.82.0.tar.xz
-Source1  : https://download.kde.org/stable/frameworks/5.82/kwindowsystem-5.82.0.tar.xz.sig
+Version  : 5.83.0
+Release  : 43
+URL      : https://download.kde.org/stable/frameworks/5.83/kwindowsystem-5.83.0.tar.xz
+Source0  : https://download.kde.org/stable/frameworks/5.83/kwindowsystem-5.83.0.tar.xz
+Source1  : https://download.kde.org/stable/frameworks/5.83/kwindowsystem-5.83.0.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : LGPL-2.1 LGPL-3.0 MIT
@@ -23,6 +23,7 @@ BuildRequires : extra-cmake-modules-data
 BuildRequires : libX11-dev libICE-dev libSM-dev libXau-dev libXcomposite-dev libXcursor-dev libXdamage-dev libXdmcp-dev libXext-dev libXfixes-dev libXft-dev libXi-dev libXinerama-dev libXi-dev libXmu-dev libXpm-dev libXrandr-dev libXrender-dev libXres-dev libXScrnSaver-dev libXt-dev libXtst-dev libXv-dev libXxf86vm-dev
 BuildRequires : libXrender-dev
 BuildRequires : libxcb-dev
+BuildRequires : qtbase-dev
 BuildRequires : qtbase-dev mesa-dev
 BuildRequires : xcb-util-keysyms-dev
 
@@ -71,15 +72,15 @@ license components for the kwindowsystem package.
 
 
 %prep
-%setup -q -n kwindowsystem-5.82.0
-cd %{_builddir}/kwindowsystem-5.82.0
+%setup -q -n kwindowsystem-5.83.0
+cd %{_builddir}/kwindowsystem-5.83.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1623262266
+export SOURCE_DATE_EPOCH=1623644988
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -95,15 +96,15 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1623262266
+export SOURCE_DATE_EPOCH=1623644988
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/kwindowsystem
-cp %{_builddir}/kwindowsystem-5.82.0/LICENSES/LGPL-2.1-only.txt %{buildroot}/usr/share/package-licenses/kwindowsystem/3c3d7573e137d48253731c975ecf90d74cfa9efe
-cp %{_builddir}/kwindowsystem-5.82.0/LICENSES/LGPL-2.1-or-later.txt %{buildroot}/usr/share/package-licenses/kwindowsystem/6f1f675aa5f6a2bbaa573b8343044b166be28399
-cp %{_builddir}/kwindowsystem-5.82.0/LICENSES/LGPL-3.0-only.txt %{buildroot}/usr/share/package-licenses/kwindowsystem/757b86330df80f81143d5916b3e92b4bcb1b1890
-cp %{_builddir}/kwindowsystem-5.82.0/LICENSES/LicenseRef-KDE-Accepted-LGPL.txt %{buildroot}/usr/share/package-licenses/kwindowsystem/e458941548e0864907e654fa2e192844ae90fc32
-cp %{_builddir}/kwindowsystem-5.82.0/LICENSES/LicenseRef-KDE-Accepted-LGPL.txt %{buildroot}/usr/share/package-licenses/kwindowsystem/e458941548e0864907e654fa2e192844ae90fc32
-cp %{_builddir}/kwindowsystem-5.82.0/LICENSES/MIT.txt %{buildroot}/usr/share/package-licenses/kwindowsystem/a0193e3fccf86c17dc71e3f6c0ac0b535e06bea3
+cp %{_builddir}/kwindowsystem-5.83.0/LICENSES/LGPL-2.1-only.txt %{buildroot}/usr/share/package-licenses/kwindowsystem/3c3d7573e137d48253731c975ecf90d74cfa9efe
+cp %{_builddir}/kwindowsystem-5.83.0/LICENSES/LGPL-2.1-or-later.txt %{buildroot}/usr/share/package-licenses/kwindowsystem/6f1f675aa5f6a2bbaa573b8343044b166be28399
+cp %{_builddir}/kwindowsystem-5.83.0/LICENSES/LGPL-3.0-only.txt %{buildroot}/usr/share/package-licenses/kwindowsystem/757b86330df80f81143d5916b3e92b4bcb1b1890
+cp %{_builddir}/kwindowsystem-5.83.0/LICENSES/LicenseRef-KDE-Accepted-LGPL.txt %{buildroot}/usr/share/package-licenses/kwindowsystem/e458941548e0864907e654fa2e192844ae90fc32
+cp %{_builddir}/kwindowsystem-5.83.0/LICENSES/LicenseRef-KDE-Accepted-LGPL.txt %{buildroot}/usr/share/package-licenses/kwindowsystem/e458941548e0864907e654fa2e192844ae90fc32
+cp %{_builddir}/kwindowsystem-5.83.0/LICENSES/MIT.txt %{buildroot}/usr/share/package-licenses/kwindowsystem/a0193e3fccf86c17dc71e3f6c0ac0b535e06bea3
 pushd clr-build
 %make_install
 popd
@@ -264,7 +265,7 @@ popd
 %files lib
 %defattr(-,root,root,-)
 /usr/lib64/libKF5WindowSystem.so.5
-/usr/lib64/libKF5WindowSystem.so.5.82.0
+/usr/lib64/libKF5WindowSystem.so.5.83.0
 /usr/lib64/qt5/plugins/kf5/kwindowsystem/KF5WindowSystemWaylandPlugin.so
 /usr/lib64/qt5/plugins/kf5/kwindowsystem/KF5WindowSystemX11Plugin.so
 
